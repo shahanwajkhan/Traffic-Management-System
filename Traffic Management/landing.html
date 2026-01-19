@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md py-4 fixed w-full z-10">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center">
+                <i class="fas fa-traffic-light text-indigo-600 text-3xl mr-3"></i>
+                <span class="text-2xl font-bold text-indigo-600">Traffic Control</span>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#features" class="text-gray-700 hover:text-indigo-600 transition-colors">Features</a>
+                <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition-colors">Contact</a>
+                <button id="showLoginBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Login
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" class="text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden bg-white shadow-md mt-4 py-4 hidden">
+            <div class="container mx-auto px-6 flex flex-col space-y-4">
+                <a href="#features" class="text-gray-700 hover:text-indigo-600 transition-colors py-2">Features</a>
+                <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors py-2">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition-colors py-2">Contact</a>
+                <button id="mobileLoginBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Smart Traffic Management for Smart Cities</h1>
+                    <p class="text-xl mb-8 opacity-90">Streamline traffic operations, reduce congestion, and create safer roads with our comprehensive traffic control platform.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button id="heroLoginBtn" class="bg-white text-indigo-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition-colors">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login
+                        </button>
+                        <a href="#features" class="bg-transparent hover:bg-indigo-700 border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition-colors text-center">
+                            <i class="fas fa-info-circle mr-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="./Landing.jpg" alt="Traffic Management Dashboard" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Powerful Features</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our traffic management platform offers comprehensive tools to monitor, analyze, and optimize traffic flow across your entire network.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-lg p-8 shadow-md transition-all duration-300">
+                    <div class="p-4 bg-indigo-100 rounded-full inline-block mb-4">
+                        <i class="fas fa-tachometer-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Real-time Dashboard</h3>
+                    <p class="text-gray-600">Monitor traffic conditions in real-time with an intuitive and responsive dashboard interface.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-lg p-8 shadow-md transition-all duration-300">
+                    <div class="p-4 bg-indigo-100 rounded-full inline-block mb-4">
+                        <i class="fas fa-id-card text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Driver Management</h3>
+                    <p class="text-gray-600">Efficiently track and manage driver information, licenses, and compliance records.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-lg p-8 shadow-md transition-all duration-300">
+                    <div class="p-4 bg-indigo-100 rounded-full inline-block mb-4">
+                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Advanced Analytics</h3>
+                    <p class="text-gray-600">Powerful analytics tools to visualize traffic patterns and make data-driven decisions.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-lg p-8 shadow-md transition-all duration-300">
+                    <div class="p-4 bg-indigo-100 rounded-full inline-block mb-4">
+                        <i class="fas fa-exclamation-triangle text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Incident Management</h3>
+                    <p class="text-gray-600">Quickly respond to and resolve traffic incidents with streamlined management tools.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white rounded-lg p-8 shadow-md transition-all duration-300">
+                    <div class="p-4 bg-indigo-100 rounded-full inline-block mb-4">
+                        <i class="fas fa-map-marked-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Interactive Maps</h3>
+                    <p class="text-gray-600">Visualize traffic flow, incidents, and congestion points on interactive maps.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white rounded-lg p-8 shadow-md transition-all duration-300">
+                    <div class="p-4 bg-indigo-100 rounded-full inline-block mb-4">
+                        <i class="fas fa-bell text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Instant Notifications</h3>
+                    <p class="text-gray-600">Stay informed with real-time alerts and notifications about critical traffic events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="./Landing2.jpg" alt="About Traffic Control" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">About Our Platform</h2>
+                    <p class="text-gray-600 mb-6">Traffic Control is a state-of-the-art traffic management system designed for modern cities. Our platform integrates advanced technologies to help traffic authorities monitor, analyze, and optimize traffic flow.</p>
+                    <p class="text-gray-600 mb-6">With powerful tools for incident management, driver tracking, and real-time analytics, we provide a comprehensive solution for all your traffic management needs.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Real-time monitoring</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Data-driven insights</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Incident response</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Compliance management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions about our traffic management platform? Contact us and our team will get back to you as soon as possible.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-lg p-8 shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Address</h4>
+                                <p class="text-gray-600">123 Traffic Avenue, Smart City, 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email</h4>
+                                <p class="text-gray-600">info@trafficcontrol.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 9am - 5pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-8 shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Send us a message</h3>
+                    <form>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                                <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                                <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your email">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Subject</label>
+                            <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="subject" type="text" placeholder="Subject">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                            <textarea class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32" id="message" placeholder="Your message"></textarea>
+                        </div>
+                        <div>
+                            <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-traffic-light text-indigo-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Traffic Control</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Smart traffic management solutions for modern cities.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="login.html" class="text-gray-400 hover:text-white transition-colors">Login</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Features</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Driver Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Analytics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Incidents</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="py-2 px-3 text-gray-800 rounded-l focus:outline-none w-full">
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r focus:outline-none">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">&copy; 2023 Traffic Control. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mx-3 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mx-3 transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm mx-3 transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-50"></div>
+        <div class="bg-white w-11/12 md:max-w-md mx-auto rounded-lg shadow-lg z-50 overflow-y-auto">
+            <div class="py-6 px-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Login</h3>
+                    <button id="closeLoginModal" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                            Username
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-user text-gray-400"></i>
+                            </div>
+                            <input class="appearance-none border rounded w-full py-3 px-4 pl-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your username">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                            Password
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input class="appearance-none border rounded w-full py-3 px-4 pl-10 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter your password">
+                        </div>
+                    </div>
+                    <div class="mb-6 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input class="mr-2 leading-tight" type="checkbox" id="remember">
+                            <label class="text-sm text-gray-700" for="remember">
+                                Remember me
+                            </label>
+                        </div>
+                        <a class="inline-block align-baseline text-sm text-indigo-600 hover:text-indigo-800" href="#">
+                            Forgot Password?
+                        </a>
+                    </div>
+                    <div class="mb-4">
+                        <button id="loginSubmitBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full transition-colors" type="button">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login
+                        </button>
+                    </div>
+                    <p class="text-center text-sm text-gray-600">
+                        Don't have an account? <a href="signup.html" class="text-indigo-600 hover:text-indigo-800">Sign up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Login Modal
+            const loginModal = document.getElementById('loginModal');
+            const showLoginBtns = [
+                document.getElementById('showLoginBtn'),
+                document.getElementById('mobileLoginBtn'),
+                document.getElementById('heroLoginBtn')
+            ];
+            const closeLoginModal = document.getElementById('closeLoginModal');
+            const modalOverlay = document.querySelector('.modal-overlay');
+            const loginSubmitBtn = document.getElementById('loginSubmitBtn');
+
+            // Open modal
+            showLoginBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        loginModal.classList.remove('hidden');
+                        document.body.classList.add('overflow-hidden');
+                    });
+                }
+            });
+
+            // Close modal
+            if (closeLoginModal) {
+                closeLoginModal.addEventListener('click', () => {
+                    loginModal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            }
+
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', () => {
+                    loginModal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            }
+
+            // Login form submission
+            if (loginSubmitBtn) {
+                loginSubmitBtn.addEventListener('click', () => {
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
+                    
+                    if (username && password) {
+                        // Submit login data to login.php instead of direct redirect
+                        const formData = new FormData();
+                        formData.append('username', username);
+                        formData.append('password', password);
+                        
+                        // Show loading state on button
+                        loginSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Logging in...';
+                        loginSubmitBtn.disabled = true;
+                        
+                        fetch('api/login.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status === 'success') {
+                                // Successful login
+                                window.location.href = 'index.html';
+                            } else {
+                                // Failed login
+                                alert(data.message || 'Login failed. Please check your credentials.');
+                                loginSubmitBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Login';
+                                loginSubmitBtn.disabled = false;
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Login error:', error);
+                            alert('An error occurred during login. Please try again.');
+                            loginSubmitBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Login';
+                            loginSubmitBtn.disabled = false;
+                        });
+                    } else {
+                        alert('Please enter both username and password');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Traffic Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card fade-in">
+            <div class="auth-card-header">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-traffic-light text-4xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold">Traffic Management System</h1>
+                <p class="mt-2 text-white text-opacity-80">Create your account</p>
+            </div>
+            
+            <div class="auth-card-body">
+                <form id="signupForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="auth-form-group">
+                            <label for="firstName">First Name</label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    placeholder="John" 
+                                    class="pl-10" 
+                                    required
+                                >
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="auth-form-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    placeholder="Doe" 
+                                    class="pl-10" 
+                                    required
+                                >
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-form-group">
+                        <label for="email">Email Address</label>
+                        <div class="relative">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="youremail@example.com" 
+                                class="pl-10" 
+                                required
+                            >
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-form-group">
+                        <label for="password">Password</label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Create a strong password" 
+                                class="pl-10" 
+                                required
+                            >
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm your password" 
+                                class="pl-10" 
+                                required
+                            >
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-form-group">
+                        <label for="role">Role</label>
+                        <div class="relative">
+                            <select 
+                                id="role" 
+                                name="role" 
+                                class="pl-10 form-input w-full" 
+                                required
+                            >
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="traffic_controller">Traffic Controller</option>
+                                <option value="police_officer">Police Officer</option>
+                                <option value="emergency_responder">Emergency Responder</option>
+                                <option value="admin">Administrator</option>
+                            </select>
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+                                <i class="fas fa-user-tag"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center my-4">
+                        <input type="checkbox" id="termsAgreement" name="termsAgreement" class="mr-2" required>
+                        <label for="termsAgreement" class="text-sm text-gray-600">
+                            I agree to the <a href="#" class="text-indigo-600 hover:underline">Terms of Service</a> and <a href="#" class="text-indigo-600 hover:underline">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-user-plus mr-2"></i>
+                        Create Account
+                    </button>
+                </form>
+                
+                <div class="auth-footer">
+                    Already have an account? <a href="login.html">Log in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('password');
+            
+            togglePassword.addEventListener('click', function() {
+                // Toggle type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                
+                // Toggle icon
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+            
+            // Form submission
+            const signupForm = document.getElementById('signupForm');
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Password validation
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+                
+                // Show loading effect
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalContent = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Creating account...';
+                submitBtn.disabled = true;
+                
+                // Simulate server request
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1500);
+            });
+            
+            // Password strength indicator (basic example)
+            const passwordInput = document.getElementById('password');
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                const strength = calculatePasswordStrength(password);
+                
+                // You could add visual feedback here
+                if (strength < 50) {
+                    this.style.borderColor = '#ef4444';
+                } else if (strength < 80) {
+                    this.style.borderColor = '#f59e0b';
+                } else {
+                    this.style.borderColor = '#10b981';
+                }
+            });
+            
+            function calculatePasswordStrength(password) {
+                let strength = 0;
+                
+                // Length contribution
+                if (password.length >= 8) {
+                    strength += 25;
+                }
+                
+                // Character variety contribution
+                if (/[A-Z]/.test(password)) strength += 15;
+                if (/[a-z]/.test(password)) strength += 15;
+                if (/[0-9]/.test(password)) strength += 15;
+                if (/[^A-Za-z0-9]/.test(password)) strength += 15;
+                
+                // Bonus for good combinations
+                if (password.length >= 12 && 
+                    /[A-Z]/.test(password) && 
+                    /[a-z]/.test(password) && 
+                    /[0-9]/.test(password) && 
+                    /[^A-Za-z0-9]/.test(password)) {
+                    strength += 15;
+                }
+                
+                return Math.min(100, strength);
+            }
+        });
+    </script>
+</body>
+</html> 
