@@ -438,6 +438,32 @@ body {
     .grid {
         grid-template-columns: 1fr;
     }
+
+    .p-8 {
+        padding: 1rem;
+    }
+
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+
+    /* Modal responsiveness */
+    .modal-content {
+        width: 95% !important;
+        margin: 10px auto;
+    }
+}
+
+/* Responsive Table Helper */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+}
+
+.table-responsive table {
+    min-width: 600px; /* Ensure table doesn't get too squished */
 }
 
 /* Login and Signup Styles */

@@ -23,31 +23,17 @@ function initSidebarToggle() {
     const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
     const sidebar = document.querySelector('.sidebar');
     
-    if (sidebarToggle) {
+    if (sidebarToggle && sidebar) {
         sidebarToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('-translate-x-full');
+            sidebar.classList.toggle('open');
         });
     }
     
-    if (mobileSidebarToggle) {
+    if (mobileSidebarToggle && sidebar) {
         mobileSidebarToggle.addEventListener('click', function() {
-            sidebar.classList.toggle('-translate-x-full');
+            sidebar.classList.toggle('open');
         });
     }
-    
-    // Hide sidebar by default on mobile
-    if (window.innerWidth < 768) {
-        sidebar.classList.add('-translate-x-full');
-    }
-    
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth < 768) {
-            if (!sidebar.classList.contains('-translate-x-full')) {
-                sidebar.classList.add('-translate-x-full');
-            }
-        }
-    });
 }
 
 /**
